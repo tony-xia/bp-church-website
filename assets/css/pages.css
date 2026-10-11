@@ -1,0 +1,96 @@
+/* Sermons, livestream, upcoming events and contact pages */
+
+/* ---------- Sermon lists (Sunday Messages, Camps & Seminars) ---------- */
+.sermons { padding-block: 76px 56px; }
+.sermons:last-child { padding-bottom: 100px; }
+.sermons--rule { border-top: 1px solid var(--c-line); }
+.sermons__heading { font-size: var(--fs-lg); font-weight: 700; line-height: 1.3; margin-bottom: 26px; }
+.audio-item__body { min-width: 0; }
+.audio-item__meta { margin: 0; line-height: 1.6; }
+.audio-player__time { min-width: 72px; text-align: right; }
+
+@media (max-width: 750px) {
+  .sermons { padding-block: 44px 40px; }
+  .sermons:last-child { padding-bottom: 40px; }
+  .sermons__heading { font-size: 18px; margin-bottom: 20px; }
+  .audio-list { gap: 10px; }
+  .audio-item__meta { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .audio-item__by { display: none; }
+  .audio-player__time { min-width: 0; }
+}
+
+/* ---------- Two-column bands (livestream, tithes & offerings) ---------- */
+.split { padding-block: 75px 95px; }
+.section--ink.split { padding-bottom: 80px; }
+.split__grid { display: grid; grid-template-columns: 485px minmax(0, 423px); }
+.split .t-eyebrow { margin: 0 0 2px 3px; }
+.split__title { font-size: 30px; line-height: 1.3; }
+.section--ink .split__title { color: var(--c-cream); }
+.split__body { padding-top: 26px; line-height: 1.3; }
+.split__body p { margin-bottom: 21px; }
+.split__rule { margin: 30px 0 22px; }
+.section--ink .split__rule { border-color: var(--c-cream); }
+.livestream__password { margin: 0 0 12px 2px; }
+.btn--lg { min-height: 37px; padding: 8px 13px; font-size: var(--fs-body); }
+.download-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-left: 2px;
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  text-decoration: none;
+}
+.download-link svg { width: 16px; height: 16px; }
+.download-link:hover { text-decoration: underline; }
+.bank-details { margin: 0; }
+.bank-details dt { display: inline; }
+.bank-details dd { display: inline; margin: 0 0 0 .3em; font-weight: 700; }
+
+@media (max-width: 750px) {
+  .split { padding-block: 52px 50px; }
+  .section--ink.split { padding-bottom: 60px; }
+  .split__grid { grid-template-columns: 1fr; }
+  .split .t-eyebrow { margin-left: 0; }
+  .split__title { line-height: 1.1; }
+  .split__body { padding-top: 32px; }
+  .split__body p { margin-bottom: 18px; }
+  .livestream__password { margin-left: 0; }
+  .split__rule { margin: 32px 0 16px; }
+  .section--ink .split__rule { margin-top: 20px; }
+}
+
+/* ---------- Upcoming events ---------- */
+.events { padding-block: 90px 75px; }
+.events__intro { max-width: 420px; line-height: 1.3; }
+.events__intro .sermons__heading { margin-bottom: 12px; }
+.events__intro a { text-decoration: none; }
+.events__intro a:hover { text-decoration: underline; }
+.events__calendar { margin: 57px 0 0; background: var(--c-white); }
+.events__calendar img { width: 100%; height: auto; }
+
+@media (max-width: 750px) {
+  .events { padding-block: 44px 35px; }
+  .events__intro { font-size: 17px; }
+  .events__calendar { margin: 46px calc(-1 * var(--gutter)) 0; }
+  .events__calendar img { aspect-ratio: 320 / 505; object-fit: cover; }
+}
+
+/* ---------- Contact ---------- */
+.contact { padding-bottom: 110px; border-bottom: 0; }
+.contact__grid { display: grid; grid-template-columns: 1fr 271px; gap: 40px; }
+.contact__intro h1 { margin-bottom: 30px; }
+.contact__intro .t-h4 { max-width: 400px; }
+.contact__list { margin: 96px 0 0; display: grid; gap: 40px; }
+.contact__list dt { padding-bottom: 4px; border-bottom: 1px solid var(--c-line); }
+.contact__list dd { margin: 6px 0 0; font-size: var(--fs-lg); line-height: 1.3; }
+.contact__list a { text-decoration: none; }
+.contact__list a:hover { text-decoration: underline; }
+
+@media (max-width: 750px) {
+  .contact { padding-block: 70px 50px; }
+  .contact__grid { grid-template-columns: 1fr; gap: 0; }
+  .contact__intro h1 { margin-bottom: 20px; }
+  .contact__list { margin-top: 76px; gap: 36px; }
+  .contact__list dd { font-size: 20px; }
+}

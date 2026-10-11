@@ -1,0 +1,157 @@
+/* Home page */
+
+/* Welcome hero */
+.home-hero { padding-block: 70px 70px; }
+.home-hero__grid {
+  display: grid;
+  grid-template-columns: 1fr 416px;
+  gap: 48px;
+  align-items: center;
+}
+.home-hero__text { max-width: 465px; }
+.home-hero__text h1 { margin-bottom: 40px; }
+.home-hero__lead { margin: 0; }
+.home-hero__lead a { text-decoration: none; }
+.home-hero__lead a:hover { text-decoration: underline; }
+.home-hero .hr { margin: 30px 0 18px; }
+.home-hero .t-sm { line-height: 1.7; margin-bottom: 14px; }
+.home-hero__img { width: 100%; height: auto; aspect-ratio: 416 / 540; object-fit: cover; }
+
+/* Our Belief band */
+.home-belief { padding-block: 70px; }
+.home-belief__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.home-belief p { font-size: var(--fs-sm); line-height: 1.45; max-width: 255px; margin-bottom: 22px; }
+.home-belief .t-h2 { color: var(--c-cream); }
+
+/* Ministry blobs */
+.home-ministries { padding-block: 110px; }
+.home-ministries h2 { margin-bottom: 110px; }
+.blob-grid {
+  list-style: none;
+  margin: 0 -80px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 80px 52px;
+}
+.blob {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 16px;
+  transition: transform .4s var(--ease-wix);
+}
+.blob::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--blob);
+  -webkit-mask: var(--blob-shape) center / 100% 100% no-repeat;
+  mask: var(--blob-shape) center / 100% 100% no-repeat;
+  z-index: 0;
+}
+.blob span { position: relative; z-index: 1; }
+.blob:hover { transform: scale(1.04); }
+.blob--a { --blob-shape: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='26.999 26.999 146 146.001' preserveAspectRatio='none'%3E%3Cpath d='M168.153 54.087a3.136 3.136 0 00-1.647-2.212c-8.054-4.171-49.356-25.206-62.545-24.872-12.713.322-30.521 1.203-34.988 1.429a3.181 3.181 0 00-1.859.718l-33.49 27.452a3.125 3.125 0 00-1.127 2.062l-5.471 47.921a3.31 3.31 0 00-.02.299c-.05 2.682-.338 38.821 19.898 49.53 18.999 10.054 46.789 15.564 51.96 16.531a3.17 3.17 0 001.647-.127c5.057-1.779 32.437-11.506 36.35-14.912 10.385-9.039 26.654-25.874 30.281-29.651a3.097 3.097 0 00.848-1.816l4.99-45.587a3.065 3.065 0 00-.034-.902l-4.793-25.863z'/%3E%3C/svg%3E"); }
+.blob--b { --blob-shape: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='25 35 150 130' preserveAspectRatio='none'%3E%3Cpath d='M26.931 84.77C27.165 87.901 25 128.22 25 128.22l4.412 35.557S147.273 165 154.205 165c0 0 15.886-36.445 15.886-42.795V73.074L175 42.981 121.435 35s-60.528 5.304-88.691 7.353L26.931 84.77z'/%3E%3C/svg%3E"); }
+
+/* Yearly events slideshow */
+.home-events { padding-block: 90px 100px; }
+.home-events h2 { margin-bottom: 70px; }
+.slideshow {
+  position: relative;
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
+  align-items: center;
+  gap: 10px;
+  max-width: 980px;
+  margin-inline: auto;
+}
+.slideshow__track { display: grid; }
+.slideshow__slide {
+  grid-area: 1 / 1;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .5s var(--ease-wix), visibility .5s;
+}
+.slideshow__slide.is-active { opacity: 1; visibility: visible; }
+.slideshow__prev, .slideshow__next {
+  width: 40px; height: 40px;
+  padding: 10px 14px;
+  border: 0;
+  background: none;
+  color: var(--c-ink);
+  cursor: pointer;
+}
+.slideshow__dots { grid-column: 1 / -1; display: flex; justify-content: center; gap: 8px; margin-top: 14px; }
+.slideshow__dots button {
+  width: 6px; height: 6px; padding: 0;
+  border: 0; border-radius: 50%;
+  background: var(--c-stone);
+  cursor: pointer;
+}
+.slideshow__dots button.is-active { background: var(--c-ink); }
+
+.event-card {
+  display: grid;
+  grid-template-columns: 1fr 372px;
+  gap: 24px;
+  padding: 20px;
+  background: var(--c-cream);
+  border-radius: var(--radius);
+  min-height: 416px;
+}
+.event-card__text { display: flex; flex-direction: column; align-items: flex-start; padding: 2px 2px 6px; }
+.event-card__text .btn { margin-top: auto; }
+.event-card__img { width: 100%; height: 376px; object-fit: cover; border-radius: 10px; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+  .blob-grid { margin-inline: 0; gap: 48px 32px; }
+}
+@media (max-width: 900px) {
+  .home-hero__grid { grid-template-columns: 1fr; }
+  .home-hero__img { max-width: 416px; }
+  .home-belief__grid { grid-template-columns: 1fr; gap: 24px; }
+  .home-belief p { max-width: none; }
+  .blob-grid { grid-template-columns: repeat(2, 1fr); }
+  .event-card { grid-template-columns: 1fr; }
+  .event-card__img { height: auto; aspect-ratio: 1; order: -1; }
+  .event-card__text .btn { margin-top: 20px; }
+}
+@media (max-width: 750px) {
+  /* Wix mobile: full-bleed building photo above the welcome text */
+  .home-hero { padding-block: 0 60px; }
+  .home-hero__grid { padding-inline: 0; gap: 40px; }
+  .home-hero__text { padding-inline: var(--gutter); }
+  .home-hero__img { order: -1; max-width: none; aspect-ratio: 390 / 210; border-radius: 0 0 var(--radius) var(--radius); }
+  .home-hero__text h1 { margin-bottom: 20px; }
+  .home-hero .t-sm { font-size: var(--fs-body); }
+  .home-belief { padding-block: 60px 80px; }
+  .home-belief p { font-size: var(--fs-body); }
+  /* Wix mobile: ministries become a single column of wide, short blobs */
+  .blob-grid { grid-template-columns: 1fr; gap: 20px; }
+  .blob { aspect-ratio: auto; min-height: 76px; padding: 12px; }
+  .event-card { padding: 16px; }
+  .event-card__img { order: 0; margin-top: 4px; }
+  .event-card__text .btn { margin-top: 16px; }
+  .home-ministries { padding-block: 60px; }
+  .home-ministries h2 { margin-bottom: 48px; }
+  .home-events { padding-block: 60px; }
+  .home-events h2 { margin-bottom: 36px; }
+  .slideshow { grid-template-columns: 1fr; }
+  .slideshow__prev, .slideshow__next {
+    position: absolute;
+    top: 40%;
+    z-index: 2;
+    background: rgba(254, 250, 240, .8);
+    border-radius: 50%;
+  }
+  .slideshow__prev { left: 4px; }
+  .slideshow__next { right: 4px; }
+}
